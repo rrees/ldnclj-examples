@@ -8,4 +8,4 @@
 		(loop [participants initial]
 			(if (some health/dead? (vals participants))
 				(println "The winner is" (apply str (map :name (status/winner participants))))
-				(recur (fight/attack participants))))))
+				(recur (fight/round participants))))))
