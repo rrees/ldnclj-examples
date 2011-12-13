@@ -4,5 +4,3 @@
 	(if (< (get participant :health 0) 1)
 		true false))
 
-(defn winner [participants]
-	(filter #(not( dead? %)) (vals participants)))

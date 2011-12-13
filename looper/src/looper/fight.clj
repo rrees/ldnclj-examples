@@ -18,7 +18,9 @@
 	(let [result (resolve-attack (participants :hero) (participants :monster))
 		loser (:loser result)]
 		(if loser
-			(update-in participants [loser :health]
-				#(- % (get result :damage 0)))
+			(do
+				(println (str (:name (loser participants)) " takes " (:damage result) " points of damage"))
+				(update-in participants [loser :health]
+					#(- % (get result :damage 0))))
 			participants)))
 		
